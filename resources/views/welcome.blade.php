@@ -9,22 +9,22 @@
 	<link href="{{ URL::asset('bootstrap/dist/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
 
 	<style>
-	/* bootstrap.css */
-* {
-   font-size: 14px;
-   line-height: 1.428;
-}
+		/* bootstrap.css */
+		* {
+			font-size: 14px;
+			line-height: 1.428;
+		}
 
-/* style.css */
-* {
-   font-size: 16px;
-   line-height: 2;
-}
+		/* style.css */
+		* {
+			font-size: 16px;
+			line-height: 2;
+		}
 		html, body {
 			height: 100%;
 		}
 
-		/*body {
+		body {
 			margin: 0;
 			padding: 0;
 			width: 100%;
@@ -46,7 +46,7 @@
 
 		.title {
 			font-size: 96px;
-		}*/
+		}
 	</style>
 </head>
 <body>
@@ -56,7 +56,7 @@
 			<div class="panel-heading"><h2>SMARTHOME ANDROID BERBASIS ARDUINO MEGA 2560 </h2></div>
 			<div class="panel-body">
 				<div  class ="row">
-					<div class ="col-md-6">
+					<div class ="col-md-6 col-sm-8">
 
 						<div class="panel panel-primary">
 							<div class="panel-heading"> <h4>Pengaturan Lampu </h4></div>
@@ -66,22 +66,22 @@
 									<a   class="btn btn-info btn-click-action" id="btnonL1" role="button">ON LAMPU 1</a>
 									<a   class="btn btn-danger  btn-click-action" id="btnoffL1" role="button">OFF LAMPU 1</a>
 								</div>
-								<br> </br>
+								 
 								<div class ="col-md-12">
 									<a   class="btn btn-info btn-click-action" id="btnonL2"  role="button">ON LAMPU 2</a>
 									<a   class="btn btn-danger  btn-click-action" id="btnoffL2"  role="button">OFF LAMPU 2</a>
 								</div>
-								<br> </br>
+								 
 								<div class ="col-md-12">
 									<a   class="btn btn-info btn-click-action" id="btnonL3"  role="button">ON LAMPU 3</a>
 									<a   class="btn btn-danger  btn-click-action" id="btnoffL3"  role="button">OFF LAMPU 3</a>
 								</div>
-								<br> </br>
+								 
 								<div class ="col-md-12">
 									<a   class="btn btn-info btn-click-action" id="btnonL4"  role="button">ON LAMPU 4</a>
 									<a   class="btn btn-danger  btn-click-action" id="btnoffL4"  role="button">OFF LAMPU 4</a>
 								</div>
-								<br> </br>
+								 
 								<div class ="col-md-12">
 									<a   class="btn btn-info btn-click-action" id="btnonL5"  role="button">ON LAMPU 5</a>
 									<a   class="btn btn-danger   btn-click-action" id="btnoffL5"  role="button">OFF LAMPU 5</a>
@@ -89,7 +89,7 @@
 							</div>
 						</div>
 					</div>
-					<div class ="col-md-6">
+					<div class ="col-md-6 col-sm-4">
 						<div class="panel panel-primary">
 							<div class="panel-heading"> <h4>Pengaturan Fan </h4></div>
 							<div class="panel-body">
@@ -98,7 +98,7 @@
 									<a   class="btn btn-info btn-click-action" id="btnonL6"   role="button">ON</a>
 									<a   class="btn btn-danger  btn-click-action" id="btnoffL6"   role="button">OFF</a>
 								</div>
-								<br> </br>
+								 
 
 							</div>
 						</div>
@@ -110,7 +110,7 @@
 									<a   class="btn btn-info  btn-click-action" id="btnonL7"   role="button">Buka</a>
 									<a   class="btn btn-danger  btn-click-action" id="btnoffL7"   role="button">Tutup</a>
 								</div>
-								<br> </br>
+								 
 
 							</div>
 						</div>
@@ -139,7 +139,7 @@
 								</div>
 								<div class ="col-md-4">
 								</div>
-								<br> </br>
+								 
 							</div>		
 						</div>
 					</div>
@@ -160,7 +160,7 @@
 							setTimeout(loapdateSuhudDoc, 3000);
 						},
 						error: function( jqXhr, textStatus, errorThrown ){
-						console.log( errorThrown );
+							console.log( errorThrown );
 							setTimeout(loapdateSuhudDoc, 3000);
 						}
 					});
