@@ -128,8 +128,8 @@
 								<div class ="col-md-4">
 									<form class="form-horizontal" role="form">
 										<div class="form-group">
-											<label class="control-label col-sm-4" for="suhu"></label>
-											<div class="col-sm-4">
+											<label class="control-label col-sm-6" for="suhu"></label>
+											<div class="col-sm-6">
 												<input type="text" class="form-control" id="suhu" placeholder="Derajat Celcius">
 											</div>
 										</div>
