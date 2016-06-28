@@ -6,6 +6,9 @@
 			fclose($handle);
 			if($contents!=""){
 			return $contents;
+		}else{
+return "file =" .dirname(__FILE__) ;
+
 		}
 
 ?>
