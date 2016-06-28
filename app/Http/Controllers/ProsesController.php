@@ -16,6 +16,15 @@ class ProsesController extends Controller
 			fclose($handle);
 			return $contents;
     }
+    public function ambilStatusTombolWeb()
+    {
+    	$filename = "formatdata.txt";
+			$handle = fopen($filename, "r");
+			$contents = fread($handle, filesize($filename));
+			fclose($handle);
+			return $contents;
+
+    }
 	public function prosesData(Request  $req){
  //$datak=Input::all();
 		$tes=$req->input('data');
