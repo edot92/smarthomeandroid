@@ -160,7 +160,7 @@
 							setTimeout(loapdateSuhudDoc, 3000);
 						},
 						error: function( jqXhr, textStatus, errorThrown ){
-							alert( errorThrown );
+						console.log( errorThrown );
 							setTimeout(loapdateSuhudDoc, 3000);
 						}
 					});
@@ -223,7 +223,7 @@
 							//alert(data);
 						},
 						error: function( jqXhr, textStatus, errorThrown ){
-							alert( errorThrown );
+							console.log( errorThrown );
 						}
 					});
 
