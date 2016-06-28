@@ -6,7 +6,7 @@
 			$contents = fread($handle, filesize($filename));
 			fclose($handle);
 			if($contents!=""){
-			echo $contents;
+			echo "#".$contents."#";
 		}else{
 			echo "file =" .dirname(__FILE__) ;
 

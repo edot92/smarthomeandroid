@@ -6,7 +6,7 @@ int pinAdc=A0;
 #include <Ethernet.h>
 
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-char server[] = "http://wahyuhidayatusoleh.pe.hu";    // name address for Google (using DNS)
+char server[] = "wahyuhidayatusoleh.pe.hu";    // name address for Google (using DNS)
 IPAddress ip(192, 168, 137, 100);
 EthernetClient client;
 
