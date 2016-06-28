@@ -4,7 +4,8 @@ void ambilStatusTombolWeb(){
     Serial.println("connected");
     // Make a HTTP request:
     client.println("GET /ambilStatusTombolWeb HTTP/1.1");
-    client.println("Host: www.google.com");
+    client.println("Host: wahyuhidayatusoleh.pe.hu");
+       client.println("User-Agent: arduino-ethernet");
     client.println("Connection: close");
     client.println();
   }
