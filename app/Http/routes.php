@@ -17,3 +17,5 @@ Route::get('/', function () {
 Route::get('/ambilStatusTombolWeb','ProsesController@ambilStatusTombolWeb');
 Route::get('/proses','ProsesController@prosesData');
 Route::get('/Ambilsuhu','ProsesController@Ambilsuhu');
+Route::get('/kirimSuhuWeb','ProsesController@kirimSuhuWeb');
+

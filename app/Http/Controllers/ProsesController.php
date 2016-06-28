@@ -9,6 +9,16 @@ use App\Http\Requests;
 class ProsesController extends Controller
 {
     //
+    //
+    
+       public function kirimSuhuWeb(Request $req){
+$nilaiSuhu=$req->input('suhu');
+			$filename = "suhu.txt";
+			$fp = fopen($filename, 'w');
+			$status=fwrite($fp, $nilaiSuhu);
+			fclose($fp);
+			return $status;
+    }
     public function Ambilsuhu(){
 			$filename = "suhu.txt";
 			$handle = fopen($filename, "r");
