@@ -1,0 +1,72 @@
+﻿Version=1.92
+IconFile=
+FullScreen=False
+IncludeTitle=True
+NumberOfModules=0
+Package=uk.co.martinpearman.b4a.webviewextras.demo
+Label=WebViewExtras demo
+VersionCode=1
+VersionString=
+Orientation=unspecified
+CanInstallToExternalStorage=False
+DoNotOverwriteManifest=False
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: http://www.basic4ppc.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" />~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~AddPermission(android.permission.ACCESS_FINE_LOCATION)
+NumberOfFiles=4
+File1=javascript_interface.htm
+File2=layoutMain.bal
+File3=web_chrome_client.htm
+File4=web_view_extras_demo.htm
+NumberOfLibraries=2
+Library1=core
+Library2=webviewextras
+@EndOfDesignText@
+	'	WebViewExtras geolocation demo Activity module
+Sub Process_Globals
+
+End Sub
+
+Sub Globals
+	Dim MyWebViewExtras As WebViewExtras
+	Dim WebView1 As WebView
+	Dim WebView2 As WebView
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("layoutMain")
+	
+	WebView1.Height=100%y/2
+	WebView1.Width=100%x
+	
+	'	add the WebChromeClient to WebView1
+	'	with version 1.30 of WebViewExtras an EventName is now required when adding the WebChromeClient
+	MyWebViewExtras.addWebChromeClient(WebView1, "MyEventName")
+	
+	WebView1.LoadUrl("http://html5demos.com/geo")
+	
+	WebView2.Top=(100%y/2)+1
+	WebView2.Height=100%y/2
+	WebView2.Width=100%x
+	WebView2.LoadUrl("http://html5demos.com/geo")
+	'	no WebChromeClient is added to WebView2
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub MyEventName_GeolocationPermissionsRequest As Int
+	Dim Response As Int
+	Response=Msgbox2("Allow the webpage to use device geolocation features?", "Permission required:", "Allow", "", "Disallow", Null)
+	If Response=DialogResponse.POSITIVE Then
+		ToastMessageShow("Permission granted", True)
+		Return MyWebViewExtras.GEOLOCATION_PERMISSION_ALLOW
+	Else
+		ToastMessageShow("Permission denied", True)
+		Return MyWebViewExtras.GEOLOCATION_PERMISSION_DISALLOW
+	End If
+End Sub
+

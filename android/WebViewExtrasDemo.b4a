@@ -1,0 +1,107 @@
+﻿Version=5.8
+NumberOfModules=0
+Build1=Default,instrumentasi2015.wordpress.com,EDY_082210160003
+ManifestCode=
+IconFile=
+NumberOfFiles=4
+File1=javascript_interface.htm
+File2=layoutMain.bal
+File3=web_chrome_client.htm
+File4=web_view_extras_demo.htm
+NumberOfLibraries=4
+Library1=core
+Library2=webviewextras
+Library3=http
+Library4=httputils2
+@EndOfDesignText@
+#Region Module Attributes
+	#FullScreen: False
+	#IncludeTitle: True
+	#ApplicationLabel: SMARTHOME
+	#VersionCode: 1
+	#VersionName: 
+	#SupportedOrientations: landscape
+	#CanInstallToExternalStorage: TRUE
+#End Region
+Sub Process_Globals
+
+	 Dim Timer1 As Timer
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	'These variables can only be accessed from this module.
+	Dim MyWebViewExtras As WebViewExtras
+	Dim WebView1 As WebView
+'	Dim WebView2 As WebView
+ Dim job As HttpJob
+    Dim ConnexioInternet As Boolean
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("layoutMain")
+	
+	Activity.AddMenuItem("flingScroll test", "FlingScroll")
+	
+	WebView1.Height=100%y
+	WebView1.Width=100%x
+		WebView1.LoadUrl("http://wahyuhidayatusoleh.pe.hu")
+	'	add the JavascriptInterface to WebView1
+	MyWebViewExtras.addJavascriptInterface(WebView1, "B4A")
+	'	add the WebChromeClient to WebView1
+	'	no EventName is used as we're not listening for the GeolocationPermissionsRequest event
+	MyWebViewExtras.addWebChromeClient(WebView1, "")
+
+'	WebView2.Top=(100%y/2)+1
+'	WebView2.Height=100%y/2
+'	WebView2.Width=100%x
+'	WebView2.LoadUrl("file:///android_asset/web_view_extras_demo.htm")
+'	'	no JavascriptInterface or WebChromeClient are added to WebView2
+ Timer1.Initialize("Timer1", 5000) ' 1000 = 1 second
+   Timer1.Enabled = True
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+Sub Timer1_Tick
+   'Handle tick events
+   	 job.Initialize("Job1", Me)
+    job.Download("http://www.google.com")
+End Sub
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub GetString As String
+	Return "This is a string from the B4A demo code"
+End Sub
+
+Sub FlingScroll_Click
+	MyWebViewExtras.flingScroll(WebView1, 0, 500)
+End Sub
+
+Sub ShowToast(Message As String)
+'	ToastMessageShow(Message, True)
+End Sub
+
+Sub ToggleWebViewHeight
+	Dim i As Int
+	i=WebView1.Height
+	If i<>100 Then
+		WebView1.Height=100
+'		WebView2.Height=100
+	Else
+		WebView1.Height=100%y/2
+'		WebView2.Height=100%y/2
+	End If
+End Sub
+
+Sub JobDone(job_ As HttpJob)
+    If job_.JobName="Job1" And job_.Success=False Then
+        ConnexioInternet = False
+    Else
+        ConnexioInternet = True
+    End If
+    job_.Release
+End Sub

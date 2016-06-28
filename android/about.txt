@@ -1,0 +1,6 @@
+this library has 3 demo programs for B4A.
+
+The other 2 are in folders:
+
+FileUpload Demo
+GeoLocation Demo

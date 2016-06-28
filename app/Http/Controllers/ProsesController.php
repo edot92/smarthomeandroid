@@ -10,31 +10,31 @@ class ProsesController extends Controller
 {
     //
     //
-    
-       public function kirimSuhuWeb(Request $req){
-$nilaiSuhu=$req->input('suhu');
-			$filename = "suhu.txt";
-			$fp = fopen($filename, 'w');
-			$status=fwrite($fp, $nilaiSuhu);
-			fclose($fp);
-			return "(".$status.")";
-    }
-    public function Ambilsuhu(){
-			$filename = "suhu.txt";
-			$handle = fopen($filename, "r");
-			$contents = fread($handle, filesize($filename));
-			fclose($handle);
-			return $contents;
-    }
-    public function ambilStatusTombolWeb()
-    {
-    	$filename = "formatdata.txt";
-			$handle = fopen($filename, "r");
-			$contents = fread($handle, filesize($filename));
-			fclose($handle);
-			return "(".$contents.")";
+	
+	public function kirimSuhuWeb(Request $req){
+		$nilaiSuhu=$req->input('suhu');
+		$filename = "suhu.txt";
+		$fp = fopen($filename, 'w');
+		$status=fwrite($fp, $nilaiSuhu);
+		fclose($fp);
+		return "(".$status.")";
+	}
+	public function Ambilsuhu(){
+		$filename = "suhu.txt";
+		$handle = fopen($filename, "r");
+		$contents = fread($handle, filesize($filename));
+		fclose($handle);
+		return $contents;
+	}
+	public function ambilStatusTombolWeb()
+	{
+		$filename = "formatdata.txt";
+		$handle = fopen($filename, "r");
+		$contents = fread($handle, filesize($filename));
+		fclose($handle);
+		return "(".$contents.")";
 
-    }
+	}
 	public function prosesData(Request  $req){
  //$datak=Input::all();
 		$tes=$req->input('data');
