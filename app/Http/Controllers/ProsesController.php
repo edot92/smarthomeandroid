@@ -22,7 +22,7 @@ class ProsesController extends Controller
 			$handle = fopen($filename, "r");
 			$contents = fread($handle, filesize($filename));
 			fclose($handle);
-			return "#".$contents."#";
+			return "(".$contents.")";
 
     }
 	public function prosesData(Request  $req){
