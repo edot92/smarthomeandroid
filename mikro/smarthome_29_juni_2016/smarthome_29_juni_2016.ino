@@ -33,6 +33,8 @@ initPinGPIO();
 }
 
 void loop()
-{  ambilStatusTombolWeb();
+{ 
+  ambilStatusTombolWeb();
+  kirimSuhuWeb();
 }
 

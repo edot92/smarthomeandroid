@@ -17,7 +17,7 @@ $nilaiSuhu=$req->input('suhu');
 			$fp = fopen($filename, 'w');
 			$status=fwrite($fp, $nilaiSuhu);
 			fclose($fp);
-			return $status;
+			return "(".$status.")";
     }
     public function Ambilsuhu(){
 			$filename = "suhu.txt";
