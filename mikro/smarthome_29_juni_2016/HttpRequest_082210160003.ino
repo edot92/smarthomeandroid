@@ -70,11 +70,11 @@ void kirimSuhuWeb()
   char http[10] = " HTTP/1.1";
   char strSend[80];
   char suhu[6];
-
-
-  random_ = random(30.1, 50.4);
+  float tempC;
+tempC = analogRead(pinAdc);           //read the value from the sensor
+tempC = (5.0 * tempC * 100.0)/1024.0;  //convert the analog data to temperature
   //4 is mininum width, 3 is precision; float value is copied onto buff
-  dtostrf(random_, 4, 3, suhu);
+  dtostrf(tempC, 4, 3, suhu);
   strcat (get, suhu);
   strcat (get, http);
 
