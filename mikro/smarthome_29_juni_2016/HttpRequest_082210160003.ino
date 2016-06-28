@@ -48,6 +48,7 @@ void ambilStatusTombolWeb() {
       cntDataWeb = 0;
       Serial.println();
       Serial.println(dataWeb);
+      prosesPin(String(dataWeb));
       memset(dataWeb, 0, 100);
 
     }
@@ -86,6 +87,8 @@ void kirimSuhuWeb()
     client.println("User-Agent: arduino-ethernet");
     client.println("Connection: close");
     client.println();
+    Serial.print("data to send =");
+      Serial.println(get);
     memset(dataWeb, 0, 100);
     ambilDataWeb = false;
     unsigned long  a = 0;

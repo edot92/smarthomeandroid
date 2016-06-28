@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Laravel</title>
+	<title>SUNDUL GAN!!</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 	<script src="{{ URL::asset('bootstrap/js/tests/vendor/jquery.min.js') }}"></script>
@@ -220,7 +220,7 @@
 						
 						data: "data="+datak_,
 						success: function( data, textStatus, jQxhr ){
-							alert(data);
+							//alert(data);
 						},
 						error: function( jqXhr, textStatus, errorThrown ){
 							alert( errorThrown );
