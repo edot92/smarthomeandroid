@@ -220,10 +220,10 @@
 						
 						data: "data="+datak_,
 						success: function( data, textStatus, jQxhr ){
-							//alert(data);
+							alert(data);
 						},
 						error: function( jqXhr, textStatus, errorThrown ){
-							console.log( errorThrown );
+							alert( errorThrown+" "+textStatus );
 						}
 					});
 
