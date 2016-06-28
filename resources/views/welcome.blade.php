@@ -24,7 +24,7 @@
 			height: 100%;
 		}
 
-		body {
+		/*body {
 			margin: 0;
 			padding: 0;
 			width: 100%;
@@ -46,7 +46,7 @@
 
 		.title {
 			font-size: 96px;
-		}
+		}*/
 	</style>
 </head>
 <body>
