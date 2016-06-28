@@ -46,6 +46,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	WebView1.Height=100%y
 	WebView1.Width=100%x
 		WebView1.LoadUrl("http://wahyuhidayatusoleh.pe.hu")
+		
 	'	add the JavascriptInterface to WebView1
 	MyWebViewExtras.addJavascriptInterface(WebView1, "B4A")
 	'	add the WebChromeClient to WebView1
@@ -100,6 +101,7 @@ End Sub
 Sub JobDone(job_ As HttpJob)
     If job_.JobName="Job1" And job_.Success=False Then
         ConnexioInternet = False
+		WebView1.LoadUrl(WebView1.Url)
     Else
         ConnexioInternet = True
     End If
