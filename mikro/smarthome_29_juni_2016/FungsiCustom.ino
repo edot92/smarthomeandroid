@@ -1,5 +1,7 @@
 String getValue(String data, char separator, int index)
 {
+    int k=EEPROM.read(10);
+  EEPROM.write(10,k);
  int found = 0;
   int strIndex[] = {
 0, -1  };
