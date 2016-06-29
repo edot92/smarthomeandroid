@@ -40,7 +40,7 @@ End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("layoutMain")
-	
+	Activity.Title="aplikasi android"
 	Activity.AddMenuItem("flingScroll test", "FlingScroll")
 	
 	WebView1.Height=100%y

@@ -324,6 +324,8 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
  //BA.debugLineNum = 25;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
  //BA.debugLineNum = 26;BA.debugLine="Activity.LoadLayout(\"layoutMain\")";
 mostCurrent._activity.LoadLayout("layoutMain",mostCurrent.activityBA);
+ //BA.debugLineNum = 27;BA.debugLine="Activity.Title=\"aplikasi android\"";
+mostCurrent._activity.setTitle((Object)("aplikasi android"));
  //BA.debugLineNum = 28;BA.debugLine="Activity.AddMenuItem(\"flingScroll test\", \"FlingSc";
 mostCurrent._activity.AddMenuItem("flingScroll test","FlingScroll");
  //BA.debugLineNum = 30;BA.debugLine="WebView1.Height=100%y";

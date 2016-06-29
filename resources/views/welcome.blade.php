@@ -9,19 +9,19 @@
 	<link href="{{ URL::asset('bootstrap/dist/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
 
 	<style>
-		/* bootstrap.css */
-		* {
-			font-size: 14px;
-			line-height: 1.428;
-		}
+	
 
 		/* style.css */
 		* {
-			font-size: 16px;
+			font-size: 25px;
 			line-height: 2;
+		
+
 		}
 		html, body {
 			height: 100%;
+			/*font-size: 20px;*/
+			
 		}
 
 		body {
@@ -29,8 +29,9 @@
 			padding: 0;
 			width: 100%;
 			display: table;
-			font-weight: 100;
-			font-family: 'Lato';
+			font-weight: 20px;
+			font-family: 'Arial';
+
 		}
 
 		.container {
@@ -45,7 +46,7 @@
 		}
 
 		.title {
-			font-size: 96px;
+			font-size: 50px;
 		}
 	</style>
 </head>
@@ -62,9 +63,9 @@
 							<div class="panel-heading"> <h4>Pengaturan Lampu </h4></div>
 							<div class="panel-body">
 
-								<div class ="col-md-12">
-									<a   class="btn btn-info btn-click-action" id="btnonL1" role="button">ON LAMPU 1</a>
-									<a   class="btn btn-danger  btn-click-action" id="btnoffL1" role="button">OFF LAMPU 1</a>
+								<div class ="col-md-12 ">
+									<a   class="btn btn-info btn-click-action text-success" id="btnonL1" role="button">ON LAMPU 1</a>
+									<a   class="btn btn-danger  btn-click-action text-success" id="btnoffL1" role="button">OFF LAMPU 1</a>
 								</div>
 								 
 								<div class ="col-md-12">
